@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <title>Achadinho no Presinho</title>
+</head>
+<body>
+    <main class="container">
+        <h1>Achadinho no Presinho</h1>
+        <form class="search-form"> <!-- Corrigido o nome da classe -->
+            <input placeholder="Digite nome do produto" class="product-input">
+            <button type="submit">Buscar</button>
+        </form>
+        <div class="product-list"></div>
+        <canvas class="price-chart"></canvas>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

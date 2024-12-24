@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --card-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+form .product-input {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    outline: none;
+}
+
+form button {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--background-color);
+    border-radius: 25px;
+    transition: background-color 0.5s;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+.product-list {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin-bottom: 30px;
+}
+
+.product-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    text-align: center;
+    padding: 20px;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.product-card p {
+    font-size: 1em;
+    color: var(--text-color);
+    margin: 5px 0;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 12px var(--text-color);
+}
+
+.product-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.product-card .loja {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.product-card img {
+    width: 45%; /* Garante que a imagem ocupe 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção original da imagem */
+    object-fit: contain; /* Ajusta a imagem dentro do contêiner sem cortar ou distorcer */
+}
+
+.product-card .prduto {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilos para o gráfico */
+.price-chart {
+    width: 90%; /* O gráfico ocupa 90% da largura do contêiner */
+    height: 500px; /* A altura foi aumentada para 500px */
+    max-width: 1200px; /* Define um limite de largura máxima */
+    margin: auto; /* Centraliza o gráfico */
+}
+
+@media (max-width: 768px) {
+    .price-chart {
+        height: 400px; /* Ajusta a altura em telas menores */
+    }
+}
