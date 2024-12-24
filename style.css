@@ -19,6 +19,8 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     padding: 20px;
+    font-size: 16px; /* Tamanho de fonte base */
+    word-wrap: break-word; /* Quebra palavras longas automaticamente */
 }
 
 .container {
@@ -31,6 +33,7 @@ h1 {
     color: var(--text-color);
     font-size: 2.5em;
     margin-bottom: 30px;
+    word-wrap: break-word; /* Garante que o título se ajuste */
 }
 
 form {
@@ -46,6 +49,8 @@ form .product-input {
     border: 2px solid var(--primary-color);
     border-radius: 25px;
     outline: none;
+    width: 100%;
+    word-wrap: break-word; /* Garante que o texto no campo de entrada não saia da caixa */
 }
 
 form button {
@@ -63,17 +68,11 @@ form button:hover {
     background-color: var(--secondary-color);
 }
 
-form button:focus {
-    outline: none;
-    box-shadow: 0 0 8px 2px rgba(52, 152, 219, 0.8); /* Adiciona brilho ao foco */
-}
-
 .product-list {
     display: grid;
     gap: 25px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    margin-bottom: 50px;
-    padding: 0 20px;
+    margin-bottom: 30px;
 }
 
 .product-card {
@@ -82,6 +81,10 @@ form button:focus {
     box-shadow: 0 4px 6px var(--shadow-color);
     text-align: center;
     padding: 20px;
+    transition: transform 0.2s ease-in-out;
+    word-wrap: break-word; /* Garante que o conteúdo dentro do card não saia */
+    height: auto;
+    overflow: hidden; /* Impede o conteúdo de sair do card */
 }
 
 .product-card img {
@@ -94,12 +97,14 @@ form button:focus {
     font-size: 1.2em;
     margin: 10px 0;
     color: var(--text-color);
+    word-wrap: break-word; /* Ajusta o texto */
 }
 
 .product-card p {
     font-size: 1em;
     color: var(--text-color);
     margin: 5px 0;
+    word-wrap: break-word; /* Garante que as descrições também se ajustem */
 }
 
 .product-card:hover {
@@ -118,21 +123,56 @@ form button:focus {
     margin-bottom: 5px;
 }
 
+.product-card img {
+    width: 100%; /* Garante que a imagem ocupe 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção original da imagem */
+    object-fit: contain; /* Ajusta a imagem dentro do contêiner sem cortar ou distorcer */
+}
+
 .product-card .produto {
     color: var(--secondary-color);
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.product-card img {
-    width: 45%; /* Garante que a imagem ocupe 100% da largura do contêiner */
-    height: auto; /* Mantém a proporção original da imagem */
-    object-fit: contain; /* Ajusta a imagem dentro do contêiner sem cortar ou distorcer */
+/* Estilos responsivos para telas pequenas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Reduz o tamanho da fonte para títulos */
+    }
+
+    .product-list {
+        grid-template-columns: 1fr; /* Exibe os produtos em uma coluna */
+    }
+
+    .product-card {
+        padding: 15px;
+        font-size: 14px; /* Ajusta o tamanho da fonte nos cards */
+    }
+
+    form .product-input, form button {
+        font-size: 14px; /* Ajusta o tamanho das fontes no formulário */
+    }
 }
 
-#priceChart {
-    width: 100%; /* Faz o gráfico ocupar toda a largura disponível */
-    max-width: 1200px; /* Limita a largura máxima do gráfico */
-    height: 400px; /* Define uma altura fixa para o gráfico */
-    margin: 30px auto; /* Centraliza o gráfico e adiciona margem superior e inferior */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Ajusta o tamanho da fonte base */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .product-list {
+        gap: 15px; /* Reduz o espaço entre os produtos */
+    }
+
+    form .product-input {
+        padding: 10px;
+    }
+
+    form button {
+        padding: 10px 20px;
+    }
 }
